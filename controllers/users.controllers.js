@@ -18,6 +18,8 @@ export const postUser = async(req, res) => {
 export const putUser = async(req, res) => {
 }
 export const delUser = async(req, res) => {
-    
+    const { id } = req.params
+    const userDeleted = await User.findByIdAndDelete(id)
+    res.json(userDeleted)
 }
  
